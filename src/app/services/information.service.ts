@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 export class InformationService {
 
   infoData: any = {};
-  equipo: any[] = [];
+  team: any[] = [];
   cargada_info: boolean = false;
   cargada_about: boolean = false;
 
@@ -31,7 +31,7 @@ export class InformationService {
       .subscribe(data => {
         console.log(data.json());
         this.cargada_about = true;
-        this.equipo = data.json();
+        this.team = data.json();
       });
 
   }
