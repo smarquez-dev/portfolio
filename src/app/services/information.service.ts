@@ -29,7 +29,7 @@ export class InformationService {
 
     this.http.get('https://portfoliosirgaden.firebaseio.com/team.json')
       .subscribe(data => {
-        console.log(data.json());
+        // console.log(data.json());
         this.cargada_about = true;
         this.team = data.json();
       });
