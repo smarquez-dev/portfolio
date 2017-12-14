@@ -18,9 +18,11 @@ export class ProductosService {
     if ( this.productos.length === 0 ) {
       this.http.get('https://portfoliosirgaden.firebaseio.com/productos_idx.json')
       .subscribe( data => {
-        console.log(data.json());
-        this.productos = data.json();
-        this.loading_products = false;
+        // console.log(data.json());
+        setTimeout(() => {
+          this.productos = data.json();
+          this.loading_products = false;
+        }, 1500);
       });
     }
   }
