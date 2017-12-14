@@ -6,9 +6,11 @@ export class ProductosService {
 
   productos: any[] = [];
   loading_products: boolean = true;
+  // product: any;
 
   constructor( private http: Http ) {
     this.load_products();
+    // this.load_product('prod-1');
   }
 
   public load_products() {
@@ -25,6 +27,18 @@ export class ProductosService {
         }, 1500);
       });
     }
+  }
+
+  public load_product( id: string ) {
+
+    return this.http.get(`https://portfoliosirgaden.firebaseio.com/productos/${id}.json`);
+
+    // this.http.get(`https://portfoliosirgaden.firebaseio.com/productos/${id}.json`)
+    // .subscribe( data => {
+    //   this.product = data.json();
+    //   console.log(this.product);
+    // });
+
   }
 
 }
